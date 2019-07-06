@@ -25,8 +25,10 @@ $(document).ready(function () {
     function getData() {
         var url = 'https://vast-shore-74260.herokuapp.com/banks?city=MUMBAI';
         // addUrlToCache(url);
+        jQuery("#preloader");
         $.ajax({
-            url: url,
+            // url: url,
+            url: localStorage.getItem("Url"),
             method: 'get',
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -46,6 +48,7 @@ $(document).ready(function () {
                 localCache.get(url);
                 var rows = data;
                 generateData(rows);
+                jQuery("#preloader").fadeOut("slow");
             },
             complete: function (jqXHR, textStatus) {
                 localCache.set(url, jqXHR, doSomething);

@@ -40,6 +40,7 @@ $(document).ready(function () {
     function getData() {
         var url = 'https://vast-shore-74260.herokuapp.com/banks?city='+$("#city").val().toUpperCase();
         addUrlToCache(url);
+        jQuery("#preloader");
         $.ajax({
             url: url,
             method: 'get',
@@ -63,6 +64,8 @@ $(document).ready(function () {
                 totalRecords = records.length;
                 totalPages = Math.ceil(totalRecords / recPerPage);
                 apply_pagination();
+                localStorage.setItem('Url', url );
+                jQuery("#preloader").fadeOut("slow");
             },
             complete: function (jqXHR, textStatus) {
                 localCache.set(url, jqXHR, doSomething);
@@ -164,8 +167,5 @@ $(document).ready(function () {
         });
         localStorage.setItem("checkboxValues", JSON.stringify(chkArray));
     });
-    $(document).on('click','#tempBtn',function () {
-        alert('Hello');
-    })
 
 });

@@ -58,6 +58,9 @@
     {{--</script>--}}
 </head>
 <body class="cbp-spmenu-push">
+<div id="preloader">
+    <div id="status">&nbsp;</div>
+</div>
 <div class="main-content">
 
     <div class="sticky-header header-section ">

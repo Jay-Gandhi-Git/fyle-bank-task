@@ -53,14 +53,18 @@
 
 
     <link href="css/custom.css" rel="stylesheet">
-
+    {{--<script type="text/javascript">--}}
+        {{--jQuery(window).load(function () {--}}
+            {{--//jQuery("#status").fadeOut();--}}
+            {{--jQuery("#preloader").delay(1800).fadeOut("slow");--}}
+        {{--})--}}
+    {{--</script>--}}
 </head>
 <body class="cbp-spmenu-push">
+<div id="preloader">
+    <div id="status">&nbsp;</div>
+</div>
 <div class="main-content">
-    <!--left-fixed -navigation-->
-
-    <!--left-fixed -navigation-->
-    <!-- header-starts -->
     <div class="sticky-header header-section ">
         <div class="header-left">
             <div class="logo">
@@ -114,7 +118,6 @@
                         </div>
                     </div>
                 </div>
-                <button id="tempBtn">Jay</button>
                 <table class="table table-hover" id="tblData">
                     <thead>
                     <tr>
